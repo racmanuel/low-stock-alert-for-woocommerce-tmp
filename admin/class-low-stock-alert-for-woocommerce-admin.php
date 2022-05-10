@@ -278,3 +278,31 @@ class Low_Stock_Alert_For_Woocommerce_Admin
         ));
     }
 }
+
+    /**
+    * Add a Message after the Settings in Admin
+    */
+    function cmb_after_row_cb()
+    {
+        ?>
+    <div class="lsafw_alert">
+        <div class="lsafw-alert-title">
+            <span>¡Importante!</span>
+        </div>
+        <div class="lsafw-alert-description">
+            <span>
+                <?php echo __('Recuerda que para que el plugin funcione correctamente debes de tener todos tus productos configurados para gestionar el stock.', ''); ?>
+            </span>
+            <div class="lsafw-dev-info">
+                <div class="lsafw-row">
+                    <div class="lsafw-column">
+                        <h3><?php _e('¿Te sirvio el plugin?',''); ?></h3>
+                        <p><?php _e('Si te gusta mi plugin no dudes en dar dejar tus comentarios en la pagina principal del plugin, no olvides que el plugin es gratuito.'); ?></p>
+                        <a href="#"><?php _e('¡Regalame un Cafe!☕',''); ?></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+    }

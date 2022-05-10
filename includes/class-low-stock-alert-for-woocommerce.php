@@ -174,6 +174,8 @@ class Low_Stock_Alert_For_Woocommerce {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+		$this->loader->add_action('woocommerce_before_add_to_cart_quantity', $plugin_public,'lsafw_alert_in_single_product');
+		$this->loader->add_action('woocommerce_after_shop_loop_item', $plugin_public, 'bbloomer_show_stock_shop', 10);
 
 	}
 
