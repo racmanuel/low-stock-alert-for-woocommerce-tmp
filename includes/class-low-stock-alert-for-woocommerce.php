@@ -29,6 +29,7 @@
  */
 class Low_Stock_Alert_For_Woocommerce {
 
+
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
 	 * the plugin.
@@ -156,6 +157,7 @@ class Low_Stock_Alert_For_Woocommerce {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		$this->loader->add_action('cmb2_admin_init', $plugin_admin,'lsafw_register_options_metabox');
 
 	}
 
