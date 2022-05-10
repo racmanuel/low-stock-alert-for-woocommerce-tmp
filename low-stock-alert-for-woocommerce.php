@@ -26,43 +26,50 @@
  */
 
 // If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
+if (!defined('WPINC')) {
+    die;
 }
+
+/**
+ * Require the Composer - Autoload
+ */
+require_once __DIR__ . '/vendor/autoload.php';
 
 /**
  * Currently plugin version.
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'LOW_STOCK_ALERT_FOR_WOOCOMMERCE_VERSION', '1.0.0' );
+define('LOW_STOCK_ALERT_FOR_WOOCOMMERCE_VERSION', '1.0.0');
 
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-low-stock-alert-for-woocommerce-activator.php
  */
-function activate_low_stock_alert_for_woocommerce() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-low-stock-alert-for-woocommerce-activator.php';
-	Low_Stock_Alert_For_Woocommerce_Activator::activate();
+function activate_low_stock_alert_for_woocommerce()
+{
+    require_once plugin_dir_path(__FILE__) . 'includes/class-low-stock-alert-for-woocommerce-activator.php';
+    Low_Stock_Alert_For_Woocommerce_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-low-stock-alert-for-woocommerce-deactivator.php
  */
-function deactivate_low_stock_alert_for_woocommerce() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-low-stock-alert-for-woocommerce-deactivator.php';
-	Low_Stock_Alert_For_Woocommerce_Deactivator::deactivate();
+function deactivate_low_stock_alert_for_woocommerce()
+{
+    require_once plugin_dir_path(__FILE__) . 'includes/class-low-stock-alert-for-woocommerce-deactivator.php';
+    Low_Stock_Alert_For_Woocommerce_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_low_stock_alert_for_woocommerce' );
-register_deactivation_hook( __FILE__, 'deactivate_low_stock_alert_for_woocommerce' );
+register_activation_hook(__FILE__, 'activate_low_stock_alert_for_woocommerce');
+register_deactivation_hook(__FILE__, 'deactivate_low_stock_alert_for_woocommerce');
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-low-stock-alert-for-woocommerce.php';
+require plugin_dir_path(__FILE__) . 'includes/class-low-stock-alert-for-woocommerce.php';
 
 /**
  * Begins execution of the plugin.
@@ -73,10 +80,11 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-low-stock-alert-for-woocom
  *
  * @since    1.0.0
  */
-function run_low_stock_alert_for_woocommerce() {
+function run_low_stock_alert_for_woocommerce()
+{
 
-	$plugin = new Low_Stock_Alert_For_Woocommerce();
-	$plugin->run();
+    $plugin = new Low_Stock_Alert_For_Woocommerce();
+    $plugin->run();
 
 }
 run_low_stock_alert_for_woocommerce();

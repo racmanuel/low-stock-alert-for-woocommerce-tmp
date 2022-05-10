@@ -1,0 +1,15 @@
+{
+    "name": "rcmanuel/low-stock-alert-for-woocommerce",
+    "require": {
+        "cmb2/cmb2": "^2.10"
+    },
+    "authors": [
+        {
+            "name": "Manuel Ramirez Coronel",
+            "email": "ra_cm@outlook.com"
+        }
+    ],
+    "autoload": {
+        "files": ["vendor/cmb2/cmb2/init.php"]
+    }
+}
